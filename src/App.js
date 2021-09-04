@@ -8,7 +8,7 @@ function App() {
   const [icon, setIcon] = useState("")
   const [response, setResponse] = useState(null)
 
-  // we pass fetchApi function as an argument to debaunce function
+  // we pass fetchApi function as an argument to debounce function
   const debounce = (func) => {
     let timer;
     return (...args) => {
@@ -35,7 +35,7 @@ function App() {
   }
 
   //on every render debounce returns a new function, to avoid this, we use useCallback.
-  //useCallback provides the memoized callback
+  //useCallback provides the memoized callback.
   const optimisedVersion = useCallback(debounce(fetchApi), []);
 
   return (
